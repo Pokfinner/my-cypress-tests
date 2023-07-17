@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #loading-screen {
+            width: 100vw;
+            height: 100vh;
+            opacity: 0.6;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading-screen"></div>
+
+    <form id="main-form" action="/checkout.html">
+        <label for="">Pizza</label>
+        <input data-cy="favFood" value="pizza" name="pizza" type="checkbox">
+        <label for="">Coke</label>
+        <input data-cy="favFood" value="coke" name="coke" type="checkbox">
+        <label for="">Dessert</label>
+        <input data-cy="favFood" value="dessert" name="dessert" type="checkbox">
+
+        <br>
+
+   
+
+        <input data-cy="14" disabled type="text" name="price">
+
+        <br>
+
+        <input type="submit" value="Checkout">
+
+    </form>
+
+    <button id="alert-btn" onclick="alert('bom dia')">Botão de Alerta!</button>
+    <button id="confirm-btn" onclick="popupConfirm()">Botão de Confirmar!</button>
+    <button id="prompt-btn" onclick="prompt('Introduza o seu nome')">Botão de Prompt!</button>
+
+    <script>
+
+        const popupConfirm = () => {
+
+            const result = confirm("Tem a Certeza?")
+            if (result)
+            {
+                alert("Confirmado")
+            }
+            else
+            {
+                alert("Cancelado")
+            }
+
+        }
+
+
+
+        const pizza = document.getElementsByName("pizza")[0]
+        const coke = document.getElementsByName("coke")[0]
+        const dessert = document.getElementsByName("dessert")[0]
+        const loadingScreen = document.getElementById("loading-screen")
+
+        const sum = () => {
+
+            //loadingScreen.style.display = "initial";
+            //setTimeout(() => loadingScreen.style.display = "none", 1800)
+
+            let price = 0
+
+            if (pizza.checked) price += 9.50
+            if (coke.checked) price += 3.50
+            if (dessert.checked) price += 4.50
+
+            document.getElementsByName("price")[0].value = price
+
+        }
+
+        pizza.onclick = sum
+        coke.onclick = sum
+        dessert.onclick = sum
+
+        sum()
+
+
+    </script>
+
+</body>
+
+
+
+</html>

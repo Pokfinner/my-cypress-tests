@@ -1,0 +1,8 @@
+{
+    "name": "Tosta Mista",
+    "price": 4.50,
+    "description": "Uma tosta à portuguesa com queijo e fiambra. Em espanhol chama-se bikini.",
+    "imagePath": "/img/pc.png",
+    "available": true,
+    "category": "Vegan"
+}

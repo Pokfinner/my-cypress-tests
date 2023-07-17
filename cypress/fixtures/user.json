@@ -1,0 +1,9 @@
+{
+    "normalUser": {
+
+    },
+    "admin": {
+        "email": "teste@teste.com",
+        "password": "Teste1234!" 
+    }
+}

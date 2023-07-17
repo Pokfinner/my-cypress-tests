@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <header>
+
+        <a href="/">Home</a>
+        <a href="/acerca.html">Acerca</a>
+        <a href="/contacto.html">Contactos</a>
+
+    </header>
+
+    <main>
+        <button>Um</button>
+        <button>Dois</button>
+        <button>Três</button>
+    </main>
+
+
+
+
+
+    <script>
+
+        [...document.querySelectorAll('button')].forEach(elem => {
+            elem.onclick = () => {
+
+                if (!event.target.innerHTML.includes("Too late!"))
+                event.target.innerHTML = "Clicado"
+            }
+        })
+
+        setTimeout(() => {
+            const elem1 = document.querySelector('button:nth-child(1)')
+            if (elem1.innerHTML != "Clicado")
+            document.querySelector('button:nth-child(1)').innerHTML = "Too late!"
+        }, 1000)
+        
+        setTimeout(() => {
+            const elem2 = document.querySelector('button:nth-child(2)')
+            if (elem2.innerHTML != "Clicado")
+            document.querySelector('button:nth-child(2)').innerHTML = "Too late!"
+        }, 2000)
+        
+        setTimeout(() => {
+            const elem3 = document.querySelector('button:nth-child(3)')
+            if (elem3.innerHTML != "Clicado")
+            document.querySelector('button:nth-child(3)').innerHTML = "Too late!"
+        }, 3000)
+
+    </script>
+</body>
+
+</html>
